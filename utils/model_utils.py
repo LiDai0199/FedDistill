@@ -9,6 +9,8 @@ from tqdm import trange
 import random
 import numpy as np
 from FLAlgorithms.trainmodel.models import Net
+from FLAlgorithms.trainmodel.models_v2 import SimpleNet
+
 from torch.utils.data import DataLoader
 from FLAlgorithms.trainmodel.generator import Generator
 from utils.model_config import *
@@ -222,7 +224,8 @@ def create_generative_model(dataset, algorithm='', model='cnn', embedding=False)
 
 def create_model(model, dataset, algorithm):
     passed_dataset = get_dataset_name(dataset)
-    model = Net(passed_dataset, model), model
+    # model = Net(passed_dataset, model), model
+    model = SimpleNet(passed_dataset, model), model
     return model
 
 
