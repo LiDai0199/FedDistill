@@ -13,16 +13,16 @@ It contains implementation of the following algorithms:
   
 ## Prepare Dataset: 
 * To generate *non-iid* **Mnist** Dataset following the Dirichlet distribution D(&alpha;=0.1) for 20 clients, using 50% of the total available training samples:
-<pre><code>cd FedGen/data/Mnist
+<pre><code>cd FedDistill/data/Mnist
 python generate_niid_dirichlet.py --n_class 10 --sampling_ratio 0.5 --alpha 0.1 --n_user 20
-### This will generate a dataset located at FedGen/data/Mnist/u20c10-alpha0.1-ratio0.5/
+### This will generate a dataset located at FedDistill/data/Mnist/u20c10-alpha0.1-ratio0.5/
 </code></pre>
     
 
 - Similarly, to generate *non-iid* **EMnist** Dataset, using 10% of the total available training samples:
-<pre><code>cd FedGen/data/EMnist
+<pre><code>cd FedDistill/data/EMnist
 python generate_niid_dirichlet.py --sampling_ratio 0.1 --alpha 0.1 --n_user 20 
-### This will generate a dataset located at FedGen/data/EMnist/u20-letters-alpha0.1-ratio0.1/
+### This will generate a dataset located at FedDistill/data/EMnist/u20-letters-alpha0.1-ratio0.1/
 </code></pre> 
 
 ## Run Experiments: 
