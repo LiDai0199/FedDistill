@@ -12,7 +12,6 @@ from FLAlgorithms.trainmodel.models import Net
 from FLAlgorithms.trainmodel.models_v2 import SimpleNet
 
 from torch.utils.data import DataLoader
-from FLAlgorithms.trainmodel.generator import Generator
 from utils.model_config import *
 METRICS = ['glob_acc', 'per_acc', 'glob_loss', 'per_loss', 'user_train_time', 'server_agg_time', 'communication_overhead_upload']
 
@@ -207,19 +206,6 @@ def get_dataset_name(dataset):
     else:
         raise ValueError('Unsupported dataset {}'.format(dataset))
     return passed_dataset
-
-
-def create_generative_model(dataset, algorithm='', model='cnn', embedding=False):
-    passed_dataset=get_dataset_name(dataset)
-    assert any([alg in algorithm for alg in ['FedGen', 'FedGen']])
-    if 'FedGen' in algorithm:
-        # temporary roundabout to figure out the sensitivity of the generator network & sampling size
-        if 'cnn' in algorithm:
-            gen_model = algorithm.split('-')[1]
-            passed_dataset+='-' + gen_model
-        elif '-gen' in algorithm: # we use more lightweight network for sensitivity analysis
-            passed_dataset += '-cnn1'
-    return Generator(passed_dataset, model=model, embedding=embedding, latent_layer_idx=-1)
 
 
 def create_model(model, dataset, algorithm):
