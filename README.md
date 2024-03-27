@@ -1,5 +1,6 @@
 # Data-Free Knowledge Distillation for Heterogeneous Federated Learning
 Modified code from this repo: https://github.com/zhuangdizhu/FedGen/tree/main. (Research code that accompanies the paper [Data-Free Knowledge Distillation for Heterogeneous Federated](https://arxiv.org/pdf/2105.10056.pdf))
+
 It contains implementation of the following algorithms:
 * **FedAvg** ([paper](https://arxiv.org/pdf/1602.05629.pdf) and [code](https://github.com/zhuangdizhu/FedGen/blob/main/FLAlgorithms/servers/serveravg.py)).
 * **FedDistill** and its extension **FedDistill-FL** ([paper](https://arxiv.org/pdf/2011.02367.pdf) and [code](https://github.com/zhuangdizhu/FedGen/blob/main/FLAlgorithms/servers/serverFedDistill.py)).
