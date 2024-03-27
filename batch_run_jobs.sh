@@ -23,7 +23,7 @@ else
     #################################
     if [ "$data" = "emnist" ]; then
       ratio=0.1
-      for alg in FedAvg FedGen FedProx FedEnsemble FedDistill-FL
+      for alg in FedAvg FedDistill-FL
       do
         dataset="EMnist-alpha$alpha-ratio$ratio"
         cmd="python3 main.py --dataset $dataset  --algorithm $alg --batch_size $batch_size --local_epochs $local_epochs --num_users $num_users --lamda $lamda --model $model --learning_rate $learning_rate  --num_glob_iters $num_glob_iters --times $times --K 1"
@@ -38,7 +38,7 @@ else
     #################################
     elif [ "$data" = "mnist" ]; then
       ratio=0.5
-      for alg in FedAvg FedGen FedProx FedEnsemble FedDistill-FL
+      for alg in FedAvg FedDistill-FL
       do
         dataset="Mnist-alpha$alpha-ratio$ratio"
         cmd="python3 main.py --dataset $dataset  --algorithm $alg --batch_size $batch_size --local_epochs $local_epochs --num_users $num_users --lamda $lamda --model $model --learning_rate $learning_rate  --num_glob_iters $num_glob_iters --times $times --K 1"
